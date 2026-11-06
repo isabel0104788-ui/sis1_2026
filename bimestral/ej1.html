@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/estilo.css">
+    <link rel="icon" href="imagenes/garza.jpg">
+
+    <title>★ Off the Wall. ☆</title>
+
+    
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Press+Start+2P&family=Slackey&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                ★ Off the Wall. ☆
+            </div>
+            <ul class="menu">
+                <!-- 1 -->
+                 <li>
+                   <a href="index.html">INICIO</a>
+                </li>
+                <!-- 2 -->
+                <li>
+                    <a href="#">
+                        FUNCIONES MATEMÁTICAS ▼
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="ej1.html">Ejercicio 1</a>
+                        </li>
+                        <li>
+                            <a href="ej2.html">Ejercicio 2</a>
+                        </li>
+                        <li>
+                            <a href="ej3.html">Ejercicio 3</a>
+                        </li>
+                        <li>
+                            <a href="ej4.html">Ejercicio 4</a>
+                        </li>
+                        <li>
+                            <a href="ej5.html">Ejercicio 5</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 3 -->
+                <li>
+                    <a href="#">
+                        FUNCIONES DE CADENAS ▼
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="ej6.html">Ejercicio 1</a>
+                        </li>
+                        <li>
+                            <a href="ej7.html">Ejercicio 2</a>
+                        </li>
+                        <li>
+                            <a href="ej8.html">Ejercicio 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 4 -->
+                <li>
+                                       <a href="#">
+                        FECHA Y HORA ▼
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="ej9.html">Ejercicio 1</a>
+                        </li>
+                        <li>
+                            <a href="ej10.html">Ejercicio 2</a>
+                        </li>
+                        <li>
+                            <a href="ej11.html">Ejercicio 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 5 -->
+                <li>
+                    <a href="#">
+                        FUNCIONES CON ARRAYS ▼
+                    </a>
+
+                    <ul class="submenu">
+
+                        <li>
+                            <a href="ej12.html">Ejercicio 1</a>
+                        </li>
+
+                        <li>
+                            <a href="ej13.html">Ejercicio 2</a>
+                        </li>
+
+                        <li>
+                            <a href="ej14.html">Ejercicio 3</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+    <!--personaje-->
+<div class="moon-character" id="moon-character">
+
+    <div class="moon-dialog">
+
+        <div class="moon-name">
+            MOON
+        </div>
+
+        <div class="moon-dialog-text" id="moon-dialog-text">
+            ¡Hola! Bienvenido a mi pequeño rincón de internet.
+        </div>
+
+        <div class="moon-dialog-arrow">
+            ▼
+        </div>
+
+    </div>
+
+    <img
+        src="imagenes/girl.png"
+        alt="Personaje"
+        class="moon-character-img"
+    >
+
+</div>
+<script>
+
+const moonPersonaje =
+    document.getElementById("moon-character");
+
+const moonTexto =
+    document.getElementById("moon-dialog-text");
+
+
+const moonMensajes = [
+
+     "¿Quieres calcular un factorial? Dame un número y empezamos.",
+    "Recuerda que el factorial multiplica todos los números anteriores hasta llegar al 1.",
+    "Por ejemplo, 5 factorial es 5 × 4 × 3 × 2 × 1.",
+    "¡Cuidado con los números grandes! El factorial crece rapidísimo.",
+
+
+];
+
+
+let moonMensajeActual = 0;
+
+
+moonPersonaje.addEventListener("click", function(){
+
+    moonMensajeActual++;
+
+    if(moonMensajeActual >= moonMensajes.length){
+        moonMensajeActual = 0;
+    }
+
+    moonTexto.innerText =
+        moonMensajes[moonMensajeActual];
+
+});
+
+
+setTimeout(function(){
+
+    moonPersonaje.classList.add("show");
+
+}, 2500);
+
+</script>
+<!--fin personaje-->
+
+    <body>
+
+<div class="calc-consola">
+
+    <div class="calc-cabezal">
+
+        <div class="calc-marca">
+            MATH//CORE
+        </div>
+
+        <div class="calc-modelo">
+            UNIT-01
+        </div>
+
+        <div class="calc-indicadores">
+            <div class="calc-indicador"></div>
+            <div class="calc-indicador"></div>
+            <div class="calc-indicador"></div>
+        </div>
+
+    </div>
+
+    <div class="calc-marco">
+
+        <div class="calc-pantalla">
+
+            <div class="calc-codigo">
+                CALC_01
+            </div>
+
+            <div class="calc-estado">
+                SYSTEM STATUS:
+                <span>READY</span>
+            </div>
+
+            <div class="calc-titulo">
+                FACTORIAL DE<br>
+                UN NÚMERO
+            </div>
+
+            <label class="calc-label">
+                INPUT NUMBER N
+            </label>
+
+            <div class="calc-input-area">
+
+                <div class="calc-simbolo">
+                    &gt;
+                </div>
+
+                <input
+                    class="calc-input"
+                    type="number"
+                    id="numero"
+                    placeholder="0"
+                >
+
+            </div>
+
+            <div
+                class="calc-resultado"
+                id="resultado"
+            >
+                RESULT: WAITING...
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="calc-panel-control">
+
+        <div class="calc-perilla"></div>
+
+        <div class="calc-botones">
+
+            <button
+                class="calc-boton"
+                onclick="calcular()"
+            >
+                EXECUTE
+            </button>
+
+            <button
+                class="calc-boton calc-boton-clear"
+                onclick="limpiar()"
+            >
+                CLEAR
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="calc-linea"></div>
+
+    <div class="calc-pie">
+        RETRO MATH TERMINAL • 198X
+    </div>
+
+</div>
+<script>
+
+function calcular(){
+
+    let n = parseInt(
+        document.getElementById("numero").value
+    );
+
+    let resultado =
+        document.getElementById("resultado");
+
+    if(isNaN(n) || n < 0){
+
+        resultado.innerHTML =
+        "ERROR: INGRESA UN NÚMERO VÁLIDO.";
+
+        resultado.classList.remove("exito");
+
+        return;
+    }
+
+    resultado.innerHTML =
+    "PROCESSING...";
+
+    let factorial = 1;
+    let i = 1;
+
+    while(i <= n){
+
+        factorial = factorial * i;
+        i++;
+
+    }
+
+    setTimeout(function(){
+
+        resultado.innerHTML =
+        "RESULT: " + factorial;
+
+        resultado.classList.add("exito");
+
+    },400);
+
+}
+
+
+function limpiar(){
+
+    document.getElementById("numero").value = "";
+
+    document.getElementById("resultado").innerHTML =
+    "RESULT: WAITING...";
+
+    document.getElementById("resultado")
+    .classList.remove("exito");
+
+}
+</script>
+<script>
+        /* MENÚ DESPLEGABLE */
+
+        const enlaces =
+            document.querySelectorAll(
+                ".menu > li > a"
+            );
+
+
+        enlaces.forEach(function(enlace){
+
+            enlace.addEventListener(
+                "click",
+                function(){
+
+                    const padre =
+                        enlace.parentElement;
+
+
+                    const submenu =
+                        padre.querySelector(
+                            ".submenu"
+                        );
+
+
+                    if(submenu){
+
+                        if(
+                            submenu.style.visibility
+                            === "visible"
+                        ){
+
+                            submenu.style.visibility =
+                                "hidden";
+
+                            submenu.style.opacity =
+                                "0";
+
+                        }
+
+                        else{
+
+                            submenu.style.visibility =
+                                "visible";
+
+                            submenu.style.opacity =
+                                "1";
+
+                        }
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    </script>
+    <script>
+
+(function() {
+
+  const maxSize = 28; 
+
+  const minSize = 8;  
+
+
+
+  function createBubble() {
+
+    const bubble = document.createElement("div");
+
+    bubble.className = "frutiger-bubble";
+
+
+
+    // Tamaño aleatorio
+
+    const size = Math.random() * (maxSize - minSize) + minSize;
+
+    bubble.style.width = size + "px";
+
+    bubble.style.height = size + "px";
+
+
+
+    // Posición horizontal aleatoria
+
+    bubble.style.left = Math.random() * window.innerWidth + "px";
+
+
+
+    // Tiempo de viaje (entre 5 y 10 segundos)
+
+    const duration = Math.random() * 5 + 5; 
+
+    bubble.style.transition = "transform " + duration + "s ease-in-out, bottom " + duration + "s linear, opacity " + duration + "s ease";
+
+
+
+    document.body.appendChild(bubble);
+
+
+
+    // Activamos el movimiento
+
+    setTimeout(() => {
+
+      bubble.style.bottom = (window.innerHeight + 60) + "px";
+
+      
+
+      // Movimiento lateral en zigzag
+
+      bubble.style.transform = "translateX(" + (Math.random() * 160 - 80) + "px)";
+
+      
+
+      // Al llegar arriba bajan su opacidad a 0.3 en lugar de desaparecer del todo rápido
+
+      bubble.style.opacity = "0.3"; 
+
+    }, 20);
+
+
+
+    // Eliminar la burbuja al terminar su recorrido
+
+    setTimeout(() => {
+
+      bubble.remove();
+
+    }, duration * 1000);
+
+  }
+
+
+
+  // Se mantiene el ritmo rápido para que se sature lindo la pantalla
+
+  setInterval(createBubble, 150);
+
+})();
+
+</script>
+</body>
+</html>
+

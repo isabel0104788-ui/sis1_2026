@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/estilo.css">
+    <link rel="icon" href="imagenes/garza.jpg">
+
+    <title>★ Off the Wall. ☆</title>
+
+    
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Press+Start+2P&family=Slackey&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                ★ Off the Wall. ☆
+            </div>
+
+
+            <ul class="menu">
+
+
+                <!-- 1 -->
+
+                 <li>
+                   <a href="index.html">INICIO</a>
+                </li>
+
+
+                <!-- 2 -->
+
+                <li>
+
+                    <a href="#">
+                        FUNCIONES MATEMÁTICAS ▼
+                    </a>
+
+                    <ul class="submenu">
+
+                        <li>
+                            <a href="ej1.html">Ejercicio 1</a>
+                        </li>
+
+                        <li>
+                            <a href="ej2.html">Ejercicio 2</a>
+                        </li>
+
+                        <li>
+                            <a href="ej3.html">Ejercicio 3</a>
+                        </li>
+
+                        <li>
+                            <a href="ej4.html">Ejercicio 4</a>
+                        </li>
+
+                        <li>
+                            <a href="ej5.html">Ejercicio 5</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <!-- 3 -->
+
+                <li>
+
+                    <a href="#">
+                        FUNCIONES DE CADENAS ▼
+                    </a>
+
+                    <ul class="submenu">
+
+                        <li>
+                            <a href="ej6.html">Ejercicio 1</a>
+                        </li>
+
+                        <li>
+                            <a href="ej7.html">Ejercicio 2</a>
+                        </li>
+
+                        <li>
+                            <a href="ej8.html">Ejercicio 3</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+
+                <!-- 4 -->
+
+                <li>
+
+                                       <a href="#">
+                        FECHA Y HORA ▼
+                    </a>
+
+                    <ul class="submenu">
+
+                        <li>
+                            <a href="ej9.html">Ejercicio 1</a>
+                        </li>
+
+                        <li>
+                            <a href="ej10.html">Ejercicio 2</a>
+                        </li>
+
+                        <li>
+                            <a href="ej11.html">Ejercicio 3</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+
+                <!-- 5 -->
+
+                <li>
+
+                    <a href="#">
+                        FUNCIONES CON ARRAYS ▼
+                    </a>
+
+                    <ul class="submenu">
+
+                        <li>
+                            <a href="ej12.html">Ejercicio 1</a>
+                        </li>
+
+                        <li>
+                            <a href="ej13.html">Ejercicio 2</a>
+                        </li>
+
+                        <li>
+                            <a href="ej14.html">Ejercicio 3</a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+    <!--personaje-->
+<div class="moon-character" id="moon-character">
+
+    <div class="moon-dialog">
+
+        <div class="moon-name">
+            MOON
+        </div>
+
+        <div class="moon-dialog-text" id="moon-dialog-text">
+            ¡Hola! Bienvenido a mi pequeño rincón de internet.
+        </div>
+
+        <div class="moon-dialog-arrow">
+            ▼
+        </div>
+
+    </div>
+
+    <img
+        src="imagenes/girl.png"
+        alt="Personaje"
+        class="moon-character-img"
+    >
+
+</div>
+<script>
+
+const moonPersonaje =
+    document.getElementById("moon-character");
+
+const moonTexto =
+    document.getElementById("moon-dialog-text");
+
+
+const moonMensajes = [
+
+       "¿Hay una palabra que quieres cambiar dentro de una frase?",
+    "Primero dime qué palabra tenemos que buscar.",
+    "Después escribimos por cuál queremos reemplazarla.",
+    "¡Y listo! La frase tendrá la palabra nueva.",
+
+];
+
+
+let moonMensajeActual = 0;
+
+
+moonPersonaje.addEventListener("click", function(){
+
+    moonMensajeActual++;
+
+    if(moonMensajeActual >= moonMensajes.length){
+        moonMensajeActual = 0;
+    }
+
+    moonTexto.innerText =
+        moonMensajes[moonMensajeActual];
+
+});
+
+
+setTimeout(function(){
+
+    moonPersonaje.classList.add("show");
+
+}, 2500);
+
+</script>
+<!--fin personaje-->
+
+    <body>
+<div class="string-contenedor">
+
+    <div class="string-lab">
+
+        <div class="string-header">
+
+            <div class="string-logo">
+                STRING//LAB
+            </div>
+
+            <div class="string-unit">
+                UNIT-03
+            </div>
+
+        </div>
+
+
+        <div class="string-screen">
+
+            <div class="string-code">
+                STR_03 / TEXT REPLACER
+            </div>
+
+            <div class="string-status">
+                SYSTEM STATUS:
+                <span>READY</span>
+            </div>
+
+            <div class="string-title">
+                BUSCAR Y<br>
+                REEMPLAZAR
+            </div>
+
+
+            <label class="string-label">
+                TEXTO ORIGINAL
+            </label>
+
+            <div class="string-input-box">
+
+                <div class="string-symbol">
+                    &gt;
+                </div>
+
+                <input
+                    class="string-input"
+                    type="text"
+                    id="texto"
+                    placeholder="ESCRIBE EL TEXTO..."
+                >
+
+            </div>
+
+
+            <label class="string-label">
+                BUSCAR
+            </label>
+
+            <div class="string-input-box">
+
+                <div class="string-symbol">
+                    ?
+                </div>
+
+                <input
+                    class="string-input"
+                    type="text"
+                    id="buscar"
+                    placeholder="PALABRA A BUSCAR..."
+                >
+
+            </div>
+
+
+            <label class="string-label">
+                REEMPLAZAR
+            </label>
+
+            <div class="string-input-box">
+
+                <div class="string-symbol">
+                    !
+                </div>
+
+                <input
+                    class="string-input"
+                    type="text"
+                    id="reemplazar"
+                    placeholder="NUEVA PALABRA..."
+                >
+
+            </div>
+
+
+            <div class="string-result" id="resultado">
+                &gt; WAITING FOR INPUT...
+            </div>
+
+        </div>
+
+
+        <div class="string-controls">
+
+            <div class="string-leds">
+
+                <div class="string-led"></div>
+                <div class="string-led"></div>
+                <div class="string-led"></div>
+
+            </div>
+
+
+            <div class="string-buttons">
+
+                <button
+                    class="string-button"
+                    onclick="reemplazarTexto()"
+                >
+                    REPLACE
+                </button>
+
+                <button
+                    class="string-button string-clear"
+                    onclick="limpiar()"
+                >
+                    CLEAR
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="string-footer">
+
+            <span>TEXT REPLACER</span>
+            <span>SYS-198X</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function reemplazarTexto(){
+
+    let texto = document.getElementById("texto").value;
+    let buscar = document.getElementById("buscar").value;
+    let reemplazar = document.getElementById("reemplazar").value;
+    let resultado = document.getElementById("resultado");
+
+    if(texto == "" || buscar == ""){
+
+        resultado.innerHTML =
+            "&gt; ERROR: COMPLETA LOS CAMPOS.";
+
+        resultado.classList.remove("success");
+
+        return;
+    }
+
+    let nuevoTexto = texto.replaceAll(buscar, reemplazar);
+
+    resultado.innerHTML =
+        "&gt; TEXT PROCESSED<br>" +
+        "&gt; ORIGINAL: " + texto + "<br>" +
+        "&gt; RESULT: " + nuevoTexto;
+
+    resultado.classList.add("success");
+}
+
+
+function limpiar(){
+
+    document.getElementById("texto").value = "";
+    document.getElementById("buscar").value = "";
+    document.getElementById("reemplazar").value = "";
+
+    document.getElementById("resultado").innerHTML =
+        "&gt; WAITING FOR INPUT...";
+
+    document.getElementById("resultado").classList.remove("success");
+}
+</script>
+<script>
+
+        /* MENÚ DESPLEGABLE */
+
+        const enlaces =
+            document.querySelectorAll(
+                ".menu > li > a"
+            );
+
+
+        enlaces.forEach(function(enlace){
+
+            enlace.addEventListener(
+                "click",
+                function(){
+
+                    const padre =
+                        enlace.parentElement;
+
+
+                    const submenu =
+                        padre.querySelector(
+                            ".submenu"
+                        );
+
+
+                    if(submenu){
+
+                        if(
+                            submenu.style.visibility
+                            === "visible"
+                        ){
+
+                            submenu.style.visibility =
+                                "hidden";
+
+                            submenu.style.opacity =
+                                "0";
+                        }
+                        else{
+                            submenu.style.visibility =
+                                "visible";
+                            submenu.style.opacity =
+                                "1";
+                        }
+                    }
+                }
+            );
+        });
+    </script>
+    <script>
+
+(function() {
+
+  const maxSize = 28; 
+
+  const minSize = 8;  
+
+
+
+  function createBubble() {
+
+    const bubble = document.createElement("div");
+
+    bubble.className = "frutiger-bubble";
+
+
+
+    // Tamaño aleatorio
+
+    const size = Math.random() * (maxSize - minSize) + minSize;
+
+    bubble.style.width = size + "px";
+
+    bubble.style.height = size + "px";
+
+
+
+    // Posición horizontal aleatoria
+
+    bubble.style.left = Math.random() * window.innerWidth + "px";
+
+
+
+    // Tiempo de viaje (entre 5 y 10 segundos)
+
+    const duration = Math.random() * 5 + 5; 
+
+    bubble.style.transition = "transform " + duration + "s ease-in-out, bottom " + duration + "s linear, opacity " + duration + "s ease";
+
+
+
+    document.body.appendChild(bubble);
+
+
+
+    // Activamos el movimiento
+
+    setTimeout(() => {
+
+      bubble.style.bottom = (window.innerHeight + 60) + "px";
+
+      
+
+      // Movimiento lateral en zigzag
+
+      bubble.style.transform = "translateX(" + (Math.random() * 160 - 80) + "px)";
+
+      
+
+      // Al llegar arriba bajan su opacidad a 0.3 en lugar de desaparecer del todo rápido
+
+      bubble.style.opacity = "0.3"; 
+
+    }, 20);
+
+
+
+    // Eliminar la burbuja al terminar su recorrido
+
+    setTimeout(() => {
+
+      bubble.remove();
+
+    }, duration * 1000);
+
+  }
+
+
+
+  // Se mantiene el ritmo rápido para que se sature lindo la pantalla
+
+  setInterval(createBubble, 150);
+
+})();
+
+</script>
+</body>
+</html>
+
