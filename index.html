@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/estilo.css">
+    <title>★ Off the Wall. ☆</title>
+    <link rel="icon" href="imagenes/garza.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Press+Start+2P&family=Slackey&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="aero-loading" id="aero-loading">
+
+    <div class="aero-loading-box">
+
+        <div class="aero-loading-title">
+            BIENVENIDO
+        </div>
+
+        <div class="aero-loading-subtitle">
+            entering my little world...
+        </div>
+
+        <div class="aero-loading-bubbles">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="aero-loading-bar">
+            <div id="aero-loading-progress"></div>
+        </div>
+
+        <div class="aero-loading-text" id="aero-loading-text">
+            LOADING...
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+let progreso = 0;
+
+const barra =
+    document.getElementById("aero-loading-progress");
+
+const texto =
+    document.getElementById("aero-loading-text");
+
+const pantalla =
+    document.getElementById("aero-loading");
+
+
+const carga = setInterval(function(){
+
+    progreso += Math.floor(Math.random() * 8) + 3;
+
+    if(progreso >= 100){
+
+        progreso = 100;
+
+        clearInterval(carga);
+
+        texto.innerText = "WELCOME!";
+
+        setTimeout(function(){
+
+            pantalla.classList.add("hide");
+
+        }, 500);
+
+    }else{
+
+        texto.innerText =
+            "LOADING... " + progreso + "%";
+
+    }
+
+    barra.style.width =
+        progreso + "%";
+
+},120);
+
+</script>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                ★ OFF THE WALL ☆
+            </div>
+            <ul class="menu">
+                <!-- 1 -->
+                <li>
+                   <a href="index.html">INICIO</a>
+                </li>
+                <!-- 2 -->
+                <li>
+                    <a href="#">
+                        FUNCIONES MATEMÁTICAS ▼
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="ej1.html">Ejercicio 1</a>
+                        </li>
+                        <li>
+                            <a href="ej2.html">Ejercicio 2</a>
+                        </li>
+                        <li>
+                            <a href="ej3.html">Ejercicio 3</a>
+                        </li>
+                        <li>
+                            <a href="ej4.html">Ejercicio 4</a>
+                        </li>
+                        <li>
+                            <a href="ej5.html">Ejercicio 5</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 3 -->
+                <li>
+                    <a href="#">
+                        FUNCIONES DE CADENAS ▼
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="ej6.html">Ejercicio 1</a>
+                        </li>
+                        <li>
+                            <a href="ej7.html">Ejercicio 2</a>
+                        </li>
+                        <li>
+                            <a href="ej8.html">Ejercicio 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 4 -->
+                <li>
+                                      <a href="#">
+                        FECHA Y HORA ▼
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="ej9.html">Ejercicio 1</a>
+                        </li>
+                        <li>
+                            <a href="ej10.html">Ejercicio 2</a>
+                        </li>
+                        <li>
+                            <a href="ej11.html">Ejercicio 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- 5 -->
+                <li>
+                    <a href="#">
+                        FUNCIONES CON ARRAYS ▼
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="ej12.html">Ejercicio 1</a>
+                        </li>
+                        <li>
+                            <a href="ej13.html">Ejercicio 2</a>
+                        </li>
+                        <li>
+                            <a href="ej14.html">Ejercicio 3</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!--personaje-->
+<div class="moon-character" id="moon-character">
+
+    <div class="moon-dialog">
+
+        <div class="moon-name">
+            MOON
+        </div>
+
+        <div class="moon-dialog-text" id="moon-dialog-text">
+            ¡Hola! Bienvenido a mi pequeño rincón de internet.
+        </div>
+
+        <div class="moon-dialog-arrow">
+            ▼
+        </div>
+
+    </div>
+
+    <img
+        src="imagenes/girl.png"
+        alt="Personaje"
+        class="moon-character-img"
+    >
+
+</div>
+<script>
+
+const moonPersonaje =
+    document.getElementById("moon-character");
+
+const moonTexto =
+    document.getElementById("moon-dialog-text");
+
+
+const moonMensajes = [
+
+    "¡Hola! Bienvenido a mi pequeño rincón de internet.",
+
+    "¿Estabas buscando algo? Tal vez puedas encontrarlo aquí.",
+
+    "Este sitio todavía guarda algunos secretos...",
+
+    "Haz clic otra vez, quizá tenga algo más que decir.",
+
+    "Me gusta este lugar. Espero que a ti también.",
+
+    "Psst... no le digas a nadie que encontraste esta página.",
+
+    "¡Gracias por visitar mi sitio!"
+
+];
+
+
+let moonMensajeActual = 0;
+
+
+moonPersonaje.addEventListener("click", function(){
+
+    moonMensajeActual++;
+
+    if(moonMensajeActual >= moonMensajes.length){
+        moonMensajeActual = 0;
+    }
+
+    moonTexto.innerText =
+        moonMensajes[moonMensajeActual];
+
+});
+
+
+setTimeout(function(){
+
+    moonPersonaje.classList.add("show");
+
+}, 2500);
+
+</script>
+<!--fin personaje-->
+    <section class="presentation">
+        <div class="presentation-text">
+            <div class="small-title">
+                ★ WELCOME TO MY WEBSITE ★
+            </div>
+            <h1>
+                RETRO<br>
+                WORK
+            </h1>
+            <h2>
+                Isabella Montserrat Salazar Laura
+            </h2>
+            <p>
+                Soy estudiante del INCOS y una persona aficionada 
+                al arte y la historia. Me interesa especialmente el 
+                dibujo, la creación de personajes y el diseño, 
+                actividades en las que puedo expresar mi creatividad 
+                e imaginación. También cuento con conocimientos en
+                programación, especialmente en la creación de páginas 
+                web y desarrollo de proyectos, lo que me ha permitido 
+                combinar la parte técnica con mi interés por lo visual.
+            </p>
+            
+            <a
+                href="#contenido"
+                class="presentation-button"
+            >
+                ENTER MY WORLD
+            </a>
+        </div>
+        <div class="record-area">
+            <div class="star one">
+                ★
+            </div>
+            <div class="record">
+                <img
+                    class="record-image"
+                    src="imagenes/foto.jpeg"
+                    alt="Imagen central"
+                >
+                <div class="record-center"></div>
+            </div>
+            <div class="star two">
+                ☆
+            </div>
+        </div>
+    </section>
+    <main
+        class="container"
+        id="contenido"
+    >
+        <h2 class="section-title">
+            ☆ Descripción Personal ☆
+        </h2>
+        <div class="cards">
+            <article class="card">
+                <div class="icon">
+                    🌸
+                </div>
+                <h3>
+                    <q>1</q>
+                </h3>
+                <p>
+                    Soy una persona creativa, responsable
+                     y con muchas ganas de aprender. Me 
+                     caracterizo por mi imaginación y mi capacidad
+                     para desarrollar ideas y buscar diferentes 
+                     formas de expresarlas.
+                </p>
+            </article>
+            <article class="card">
+                <div class="icon">
+                    ⛩️
+                </div>
+                <h3>
+                    2
+                </h3>
+                <p>
+                    También tengo facilidad
+                     para adaptarme a nuevas situaciones 
+                     y aprender mediante la práctica.
+                </p>
+            </article>
+            <article class="card">
+                <div class="icon">
+                    🐉
+                </div>
+                <h3>
+                    3
+                </h3>
+                <p>
+                    Considero que la perseverancia es una de mis principales 
+                    aptitudes, ya que procuro seguir intentando hasta conseguir 
+                    un buen resultado.
+                </p>
+            </article>
+            <article class="card">
+                <div class="icon">
+                    💫
+                </div>
+                <h3>
+                    4
+                </h3>
+                <p>
+                    Me gusta trabajar en proyectos donde pueda poner 
+                    en práctica mi creatividad,mejorar mis habilidades
+                     y adquirir nuevos conocimientos.
+                </p>
+            </article>
+            <article class="card">
+                <div class="icon">
+                    🎆
+                </div>
+                <h3>
+                    5
+                </h3>
+                <p>
+                   Me gusta dibujar, crear personajes, 
+                   diseñar páginas y experimentar con 
+                   diferentes estilos visuales.
+                </p>
+            </article>
+            <article class="card">
+                <div class="icon">
+                    🎋
+                </div>
+                <h3>
+                    6
+                </h3>
+                <p>
+                    También me interesa el diseño y la creación 
+                    de proyectos visuales, 
+                    donde puedo combinar mis ideas y mi estilo personal.
+                </p>
+            </article>
+        </div>
+    </main>
+    <footer>
+        ★ OFF THE WALL ☆
+        — MADE WITH 80s LOVE —
+    </footer>
+    <script>
+        document.addEventListener(
+            "DOMContentLoaded",
+            function(){
+
+                const presentation =
+                    document.querySelector(
+                        ".presentation"
+                    );
+
+
+                presentation.style.opacity = "0";
+
+                presentation.style.transform =
+                    "translateY(25px)";
+
+
+                setTimeout(function(){
+
+                    presentation.style.transition =
+                        "1s";
+
+
+                    presentation.style.opacity =
+                        "1";
+
+
+                    presentation.style.transform =
+                        "translateY(0)";
+
+
+                }, 200);
+
+            }
+        );
+        /* BOTÓN ENTER MY WORLD*/
+        const boton =
+            document.querySelector(
+                ".presentation-button"
+            );
+
+        boton.addEventListener(
+            "click",
+            function(event){
+
+                event.preventDefault();
+
+
+                document
+                    .querySelector("#contenido")
+                    .scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+            }
+        );
+        /*TARJETAS*/
+
+        const cards =
+            document.querySelectorAll(
+                ".card"
+            );
+
+
+        cards.forEach(function(card){
+
+            card.addEventListener(
+                "click",
+                function(){
+
+                    card.style.transform =
+                        "scale(1.05)";
+
+
+                    setTimeout(function(){
+
+                        card.style.transform =
+                            "";
+
+                    }, 250);
+
+                }
+            );
+
+        });
+
+        const enlaces =
+            document.querySelectorAll(
+                ".menu > li > a"
+            );
+
+
+        enlaces.forEach(function(enlace){
+
+            enlace.addEventListener(
+                "click",
+                function(){
+
+                    const padre =
+                        enlace.parentElement;
+
+
+                    const submenu =
+                        padre.querySelector(
+                            ".submenu"
+                        );
+
+
+                    if(submenu){
+
+                        if(
+                            submenu.style.visibility
+                            === "visible"
+                        ){
+
+                            submenu.style.visibility =
+                                "hidden";
+
+                            submenu.style.opacity =
+                                "0";
+
+                        }
+
+                        else{
+
+                            submenu.style.visibility =
+                                "visible";
+
+                            submenu.style.opacity =
+                                "1";
+
+                        }
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    </script>
+<script>
+
+(function() {
+
+  const maxSize = 28; 
+
+  const minSize = 8;  
+
+
+
+  function createBubble() {
+
+    const bubble = document.createElement("div");
+
+    bubble.className = "frutiger-bubble";
+
+
+
+    // Tamaño aleatorio
+
+    const size = Math.random() * (maxSize - minSize) + minSize;
+
+    bubble.style.width = size + "px";
+
+    bubble.style.height = size + "px";
+
+
+
+    // Posición horizontal aleatoria
+
+    bubble.style.left = Math.random() * window.innerWidth + "px";
+
+
+
+    // Tiempo de viaje (entre 5 y 10 segundos)
+
+    const duration = Math.random() * 5 + 5; 
+
+    bubble.style.transition = "transform " + duration + "s ease-in-out, bottom " + duration + "s linear, opacity " + duration + "s ease";
+
+
+
+    document.body.appendChild(bubble);
+
+
+
+    // Activamos el movimiento
+
+    setTimeout(() => {
+
+      bubble.style.bottom = (window.innerHeight + 60) + "px";
+
+      
+
+      // Movimiento lateral en zigzag
+
+      bubble.style.transform = "translateX(" + (Math.random() * 160 - 80) + "px)";
+
+      
+
+      // Al llegar arriba bajan su opacidad a 0.3 en lugar de desaparecer del todo rápido
+
+      bubble.style.opacity = "0.3"; 
+
+    }, 20);
+
+
+
+    // Eliminar la burbuja al terminar su recorrido
+
+    setTimeout(() => {
+
+      bubble.remove();
+
+    }, duration * 1000);
+
+  }
+
+
+
+  // Se mantiene el ritmo rápido para que se sature lindo la pantalla
+
+  setInterval(createBubble, 150);
+
+})();
+
+</script>
+
+</body>
+</html>
+
